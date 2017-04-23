@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}project login{% endblock %}
+
+{% block body %}
+
+    <div class="my_ref">
+        <dl class="my_ref">
+            <dt>recently added:</dt>
+           {# <dd>{{ user }}</dd>#}
+        </dl>
+    </div>
+
+    <form action="{{ path('login_page') }}" method="post">
+        <label for="username">username:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        <br>
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="_password" />
+        <br>
+        <button type="submit">login</button>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

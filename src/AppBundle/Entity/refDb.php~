@@ -1,0 +1,66 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: owen
+ * Date: 20/04/2017
+ * Time: 01:32
+ */
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="userDb")
+ */
+class refDb
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $txt;
+
+    /***********************GETTERS AND SETTER*******/
+
+    /**
+     * Get id
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set txt
+     *
+     * @param string $txt
+     *
+     * @return refDb
+     */
+    public function setTxt($txt)
+    {
+        $this->txt = $txt;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getTxt()
+    {
+        return $this->txt;
+    }
+}

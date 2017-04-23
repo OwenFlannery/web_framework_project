@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}profile index{% endblock %}
+
+{% block body %}
+
+    <div class="my_ref">
+        <dl class="my_ref">
+            <dt>recently added:</dt>
+            <dd>{{ user }}</dd>
+
+        </dl>
+    </div>
+
+    <div class="enter_item">
+        <dl class="enter">
+            <dt></dt>
+            <dd>
+                <form action="#" method="post">
+                    <label for="ref">ENTER REFRENCE:</label>
+                    <br>
+                    <input type="text" id="ref" name="_ref" {#value="{{ last_username }}"#} />
+                    <br>
+                    <button type="submit">SUBMIT REFRENCE</button>
+                </form>
+            </dd>
+            <hr>
+            <dd>
+                <form action="#" method="post">
+                    <label for="ref">ENTER BIBLIOGRAPHIC:</label>
+                    <br>
+                    <label for="title">ENTER TITLE:</label>
+                    <br>
+                    <input type="text" id="title" name="_title" />
+            <dd>
+                    <label for="sum">ENTER SUMMARY:</label>
+                    <br>
+                    <input type="text" id="sum" name="_sum" />
+            </dd>
+                    <button type="submit">SUBMIT BIBLIOGRAPHIC</button>
+                </form>
+            </dd>
+
+        </dl>
+    </div>
+
+    <?php
+
+    ?>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+    <script type="text/babel" src="{{ asset('js/notes.react.js') }}"></script>
+    <script type="text/babel">
+        var notesUrl = '{{ path('project_show_notes') }}';
+
+        ReactDOM.render(
+        <NoteSection url={notesUrl} />,
+                document.getElementById('js-notes-wrapper')
+        );
+    </script>
+{% endblock %}

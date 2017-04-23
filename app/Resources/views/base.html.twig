@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ name }}{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
+    {% endblock %}
+</head>
+<body>
+<header class="header">
+    <ul class="navi">
+        <li><a href="{{ path('index_page') }}">home</a></li>
+        <li><a href="{{ path('profile_page') }}">my profile</a></li>
+        <li><a href="{{ path('login_page') }}">Login</a></li>
+    </ul>
+</header>
+
+<div class="main-content">
+    {% block body %}{% endblock %}
+</div>
+
+
+{% block javascripts %}
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
+</body>
+</html>
