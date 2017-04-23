@@ -28,14 +28,6 @@ Flexbox Layout
     justify-content: center;
 }
 
-.notes-container {
-    justify-content: space-between;
-    border-top: 1px solid #ECF0F1;
-}
-
-.footer {
-    justify-content: center;
-}
 
 @media all and (min-width: 700px) {
     .sea-creature-container {
@@ -117,11 +109,6 @@ body {
         justify-content: flex-start;
     }
 
-    .genus-name {
-        text-align: left;
-        margin-left: 60px;
-    }
-
 }
 
 /******************************
@@ -131,7 +118,7 @@ BODY Styling
     width: 200px;
     height: 200px;
     border: 1px solid #000;
-    background: url('../images/octopus-rubescens.jpg');
+    background: url('../images/image.jpg');
     border-radius: 50%;
     margin-bottom: 30px;
 }
@@ -238,7 +225,7 @@ label
 }
 
 .cd-container {
-    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+
     width: 90%;
     max-width: 768px;
     margin: 0 auto;
